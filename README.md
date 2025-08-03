@@ -40,11 +40,11 @@
 - [ ] [`HoverNet细胞核分割`](./HoverNet细胞核分割.md)：《HoVer-Net: Simultaneous Segmentation and
 Classification of Nuclei in Multi-Tissue Histology
 Images》
-- [ ] [`U-Net网络`](./YOLOv8目标检测.md)：YOLOv8 模型结构与推理优化
-- [ ] [`U-Net++网络`](./TensorRT推理加速.md)：TensorRT 基础与实践
-- [ ] [`DeepLabV3+网络`](./YOLOv8目标检测.md)：YOLOv8 模型结构与推理优化
-- [ ] [`Vit网络`](./YOLOv8目标检测.md)：YOLOv8 模型结构与推理优化
-- [ ] [`Swin Transformer网络`](./YOLOv8目标检测.md)：YOLOv8 模型结构与推理优化
+- [ ] [`U-Net网络`](./YOLOv8目标检测.md)：《U-Net: Convolutional Networks for Biomedical Image Segmentation》
+- [ ] [`U-Net++网络`](./TensorRT推理加速.md)：《UNet++: A Nested U-Net Architecture for Medical Image Segmentation》
+- [ ] [`DeepLabV3+网络`](./YOLOv8目标检测.md)：《Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation》
+- [ ] [`Vit网络`](./YOLOv8目标检测.md)：《An Image Is Worth 16*16 Words:Transformers For Image Recognition at scale》
+- [ ] [`Swin Transformer网络`](./YOLOv8目标检测.md)：《Swin Transformer: Hierarchical Vision Transformer using Shifted Windows》
   
 ---
 
