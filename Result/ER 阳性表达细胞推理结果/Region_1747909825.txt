@@ -1,0 +1,22 @@
+image size: 20000x20000
+[TensorRT] Deserialization required 67704 microseconds.
+[TensorRT] Total per-runner device persistent memory is 0
+[TensorRT] Total per-runner host persistent memory is 469520
+[TensorRT] Allocated activation device memory of size 245861376
+[TensorRT] CUDA lazy loading is enabled.
+推理耗时统计: avg=35.7557 ms, min=4.41078 ms, max=41.7323 ms
+原始 patch 总数: 1089
+跳过空白或全黑 patch 数: 476
+实际推理 patch 数: 613
+总检测目标数: 476814
+NMS去重后剩余目标数: 476779
+MultiPoint GeoJSON written to: output/points_multi.geojson
+ 总推理时间: 18499.9 ms
+阳性细胞数: 3908
+阴性细胞数: 472871
+阳性比例: 0.819667%
+阴性比例: 99.1803%
+最大常驻内存（Max RSS）: 2641044 KB
+GPU总显存: 16379 MB
+GPU剩余显存: 14895 MB
+GPU已用显存: 1484 MB
