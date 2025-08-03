@@ -279,7 +279,45 @@ $$
 
 ---
 
-## 4.手工模拟计算示例
+## 4. 根据新染色风格重建 OD 并转移到 RGB
+
+已知条件
+
+- $H_{\text{source}} \in \mathbb{R}^{2 \times n}$：迭代优化后的源图像染料浓度矩阵（$n$ 为像素总数）；
+- $W_{\text{ref}} \in \mathbb{R}^{3 \times 2}$：参考图像的颜色基矩阵，表示标准染色风格；
+- $OD_{\text{new}} = W_{\text{ref}} \cdot H_{\text{source}} \in \mathbb{R}^{3 \times n}$：新的光密度矩阵；
+- 转换公式：  
+  $$
+  RGB = 255 \cdot \exp(-OD)
+  $$
+
+公式推导: 根据参考染色风格重建 OD
+
+$$
+OD_{\text{normalized}} = W_{\text{ref}} \cdot H_{\text{source}}
+$$
+
+其中：
+
+- $W_{\text{ref}}$：每列表示参考图像中染料的吸光方向（即颜色基）；
+- $H_{\text{source}}$：表示每个像素在两种染料下的浓度；
+
+从 OD 空间还原 RGB 图像,根据光密度定义公式：
+
+$$
+OD = -\log_{10} \left( \frac{I}{I_0} \right) \quad \Rightarrow \quad I = I_0 \cdot 10^{-OD}
+$$
+
+实际使用中，多采用自然对数方式还原，变为指数形式：
+
+$$
+RGB = 255 \cdot \exp(-OD_{\text{normalized}})
+$$
+
+---
+
+
+## 5.手工模拟计算示例
 
 输入光密度矩阵 OD ∈ ℝ<sup>3×4</sup>：
 

@@ -35,16 +35,16 @@
 
 ## 算法结构 · 原理笔记与公式推导
 
-- [x] [`StarDist 实例分割`](./StarDist细胞分割方法.md)：《Cell Detection with Star-convex Polygons》  
-- [x] [`Vahadane 染色归一化`](./Vahadane颜色归一化方法.md)：《Structure-Preserving Color Normalization and Sparse Stain Separation for Histological Images》
-- [ ] [`HoverNet细胞核分割`](./HoverNet细胞核分割.md)：《HoVer-Net: Simultaneous Segmentation and
+- [x] [`StarDist 实例分割`](<02_算法理解/StarDist 方法结构梳理与原理理解笔记.md>)：《Cell Detection with Star-convex Polygons》  
+- [x] [`Vahadane 染色归一化`](<02_算法理解\Vahadane 染色归一化方法与数学推导.md>)：《Structure-Preserving Color Normalization and Sparse Stain Separation for Histological Images》
+- [ ] [`U-Net网络`](<02_算法理解\U-Net网络.md>)：《U-Net: Convolutional Networks for Biomedical Image Segmentation》
+- [ ] [`U-Net++网络`](<02_算法理解\U-Net++网络.md>)：《UNet++: A Nested U-Net Architecture for Medical Image Segmentation》
+- [ ] [`DeepLabV3+网络`](<02_算法理解\DeepLabV3+网络.md>)：《Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation》
+- [ ] [`Vit网络`](<02_算法理解\Vit网络.md>)：《An Image Is Worth 16*16 Words:Transformers For Image Recognition at scale》
+- [ ] [`Swin Transformer网络`](<02_算法理解\Swin Transformer网络.md>)：《Swin Transformer: Hierarchical Vision Transformer using Shifted Windows》
+- [ ] [`HoverNet细胞核分割`](<02_算法理解\HoverNet细胞核分割.md>)：《HoVer-Net: Simultaneous Segmentation and
 Classification of Nuclei in Multi-Tissue Histology
 Images》
-- [ ] [`U-Net网络`](./YOLOv8目标检测.md)：《U-Net: Convolutional Networks for Biomedical Image Segmentation》
-- [ ] [`U-Net++网络`](./TensorRT推理加速.md)：《UNet++: A Nested U-Net Architecture for Medical Image Segmentation》
-- [ ] [`DeepLabV3+网络`](./YOLOv8目标检测.md)：《Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation》
-- [ ] [`Vit网络`](./YOLOv8目标检测.md)：《An Image Is Worth 16*16 Words:Transformers For Image Recognition at scale》
-- [ ] [`Swin Transformer网络`](./YOLOv8目标检测.md)：《Swin Transformer: Hierarchical Vision Transformer using Shifted Windows》
   
 ---
 
@@ -52,9 +52,12 @@ Images》
 
 记录一些临时想法、小工具、环境搭建、调试经验等，方便日后统一整理。
 
-- [x] [`研究生阶段论文整理`](./脚本清单_README.md)：各类 groovy / python 脚本用途与参数（建设中）
-- [x] [`QuPath 脚本工具`](./QuPath%20脚本工具.md)：标注导出、ROI 提取等脚本片段  
-- [ ] [`Python 脚本工具`](./06_环境配置_bug经验_踩的的坑.md)：显存占用异常、路径冲突等杂项问题  
+- [x] [`QuPath 工具脚本`](<03_工具脚本\QuPath\QuPath 脚本工具.md>): 用于在 QuPath 中处理数字扫描切片数据；
+- [x] [`研究生论文`](<04_研究生论文\论文说明.md>): 研究生阶段的小论文；
+- [x] [`Python 工具脚本`](<03_工具脚本\Python\Python 脚本工具.md>): 实践中使用到的一些脚本工具(整理中)
+- [ ] [`胡思乱想`](<06_工作区\头脑风暴.md>)：头脑风暴（）
+
+
 
 ---
 
