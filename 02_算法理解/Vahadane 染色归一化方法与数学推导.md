@@ -375,27 +375,14 @@ $$
 $$
 
 $$
-\hat{\mathbf{o}}_1 = W \cdot \mathbf{h}_1
-=
-\begin{bmatrix}
-0.6 \cdot 0.4 + 0.2 \cdot 0.2 \\
-0.5 \cdot 0.4 + 0.3 \cdot 0.2 \\
-0.4 \cdot 0.4 + 0.1 \cdot 0.2
-\end{bmatrix}
-=
-\begin{bmatrix}
-0.28 \\
-0.26 \\
-0.18
-\end{bmatrix}
+\hat{\mathbf{o}}_1 = W \cdot \mathbf{h}_1=\begin{bmatrix}0.6 \cdot 0.4 + 0.2 \cdot 0.2 \\0.5 \cdot 0.4 + 0.3 \cdot 0.2 \\0.4 \cdot 0.4 + 0.1 \cdot 0.2\end{bmatrix}
+=\begin{bmatrix}0.28 \\0.26 \\0.18\end{bmatrix}
 $$
 
 残差：
 
 $$
-\mathbf{r} = \mathbf{o}_1 - \hat{\mathbf{o}}_1
-=
-\begin{bmatrix}
+\mathbf{r} = \mathbf{o}_1 - \hat{\mathbf{o}}_1=\begin{bmatrix}
 0.3 - 0.28 \\
 0.6 - 0.26 \\
 0.1 - 0.18
