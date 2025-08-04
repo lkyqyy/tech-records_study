@@ -6,6 +6,8 @@
 >Structure-Preserving Color Normalization and Sparse Stain Separation for Histological Images  
 > 链接：[IEEE文章链接](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7460968)
 
+(出现乱码，待修正)
+
 ---
 
 ## 1. 方法简介
