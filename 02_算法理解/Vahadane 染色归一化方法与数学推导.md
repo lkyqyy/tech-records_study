@@ -108,8 +108,8 @@ $$
 
 观察中间两项：
 
-- 第一项：$\mathbf{o}_1^\top \mathbf{W} \mathbf{h}_1$ 是一个标量；
-- 第二项：$(\mathbf{W} \mathbf{h}_1)^\top \mathbf{o}_1$ 是它的转置，但标量的转置等于它本身！
+- $\mathbf{o}_1^\top \mathbf{W} \mathbf{h}_1$ 是一个标量；
+- $(\mathbf{W} \mathbf{h}_1)^\top \mathbf{o}_1$ 是它的转置，但标量的转置等于它本身！
 
 所以这两项是相等的：
 
@@ -168,8 +168,8 @@ $$
 (\mathbf{W} \mathbf{h}_1)^\top (\mathbf{W} \mathbf{h}_1) = \mathbf{h}_1^\top \mathbf{W}^\top \mathbf{W} \mathbf{h}_1
 $$
 
-
 因此，目标函数可以写成：
+
 $$
 L(\mathbf{h}_1) = \mathbf{o}_1^\top \mathbf{o}_1 - 2 \mathbf{h}_1^\top \mathbf{W}^\top \mathbf{o}_1 + \mathbf{h}_1^\top \mathbf{W}^\top \mathbf{W} \mathbf{h}_1
 $$
@@ -216,11 +216,13 @@ $$
 $$
 
 因此，最终的梯度为：
+
 $$
 \nabla_{h_1} L(\mathbf{h}_1) = -2 \mathbf{W}^\top \mathbf{o}_1 + 2 \mathbf{W}^\top \mathbf{W} \mathbf{h}_1
 $$
 
 梯度更新规则为：
+
 $$
 \mathbf{h}_1 = \mathbf{h}_1 - \eta \nabla_{h_1} L(\mathbf{h}_1)
 $$
