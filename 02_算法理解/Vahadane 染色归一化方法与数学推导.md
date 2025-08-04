@@ -88,12 +88,11 @@ $$L(\mathbf{h}_1) = \left\| \mathbf{o}_1 - \mathbf{W} \mathbf{h}_1 \right\|_2^2 
 - $\mathbf{W} \in \mathbb{R}^{3 \times 2}$：染料颜色基矩阵，每列是一个染料的吸光特征向量
 - $\mathbf{h}_1 \in \mathbb{R}^{2 \times 1}$：待优化的染料浓度向量
 
-根据向量内积展开，
+根据向量内积展开
 
 $$
 (\mathbf{o}_1 - \mathbf{W}\mathbf{h}_1)^\top (\mathbf{o}_1 - \mathbf{W}\mathbf{h}_1)
-= \mathbf{o}_1^\top \mathbf{o}_1 - \mathbf{o}_1^\top \mathbf{W} \mathbf{h}_1 
-- (\mathbf{W} \mathbf{h}_1)^\top \mathbf{o}_1 + (\mathbf{W} \mathbf{h}_1)^\top (\mathbf{W} \mathbf{h}_1)
+= \mathbf{o}_1^\top \mathbf{o}_1 - \mathbf{o}_1^\top \mathbf{W} \mathbf{h}_1 - (\mathbf{W} \mathbf{h}_1)^\top \mathbf{o}_1 + (\mathbf{W} \mathbf{h}_1)^\top (\mathbf{W} \mathbf{h}_1)
 $$
 
 通过化简，
