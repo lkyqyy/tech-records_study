@@ -66,9 +66,10 @@ $h_{2i}$：像素 $i$ 中 **伊红（Eosin）** 的浓度
 ## 3. SNMF 模型分解求解
 
 由于OD矩阵中的像素的颜色吸光度和浓度可线性分解（我的理解是浓度越大，颜色越深）, 于是该矩阵可被分解为:
+
 $$OD \approx W \cdot H$$
 
-因为$OD = WH$ 解的空间是无限的，有无数个解。所以，为了“找出最合理的参数组合”，我们引入一个目标函数，通过最小化重建误差来寻找最优解, 目标函数:
+因为其解的空间是无限的，有无数个解。所以，为了“找出最合理的参数组合”，我们引入一个目标函数，通过最小化重建误差来寻找最优解, 目标函数:
 
 $$\min_{W,H} \|OD - WH\|_F^2 + \lambda \|H\|_1$$
 
@@ -84,9 +85,11 @@ $$L(\mathbf{h}_1) = \left\| \mathbf{o}_1 - \mathbf{W} \mathbf{h}_1 \right\|_2^2 
 
 其中：
 
-- $\mathbf{o}_1 \in \mathbb{R}^{3 \times 1}$：列向量，表示第 1 个像素的光密度（OD）
-- $\mathbf{W} \in \mathbb{R}^{3 \times 2}$：染料颜色基矩阵，每列是一个染料的吸光特征向量
-- $\mathbf{h}_1 \in \mathbb{R}^{2 \times 1}$：待优化的染料浓度向量
+$\mathbf{o}_1 \in \mathbb{R}^{3 \times 1}$：列向量，表示第 1 个像素的光密度（OD）
+
+$\mathbf{W} \in \mathbb{R}^{3 \times 2}$：染料颜色基矩阵，每列是一个染料的吸光特征向量
+
+$\mathbf{h}_1 \in \mathbb{R}^{2 \times 1}$：待优化的染料浓度向量
 
 根据向量内积展开
 
@@ -108,8 +111,9 @@ $$
 
 观察中间两项：
 
-- $\mathbf{o}_1^\top \mathbf{W} \mathbf{h}_1$ 是一个标量；
-- $(\mathbf{W} \mathbf{h}_1)^\top \mathbf{o}_1$ 是它的转置，但标量的转置等于它本身！
+$\mathbf{o}_1^\top \mathbf{W} \mathbf{h}_1$ 是一个标量；
+
+$(\mathbf{W} \mathbf{h}_1)^\top \mathbf{o}_1$ 是它的转置，但标量的转置等于它本身！
 
 所以这两项是相等的：
 
@@ -142,7 +146,6 @@ $$
 $$
 -2 \mathbf{o}_1^\top \mathbf{W} \mathbf{h}_1 = -2 \mathbf{h}_1^\top \mathbf{W}^\top \mathbf{o}_1
 $$
-
 
 最后一项：
 
@@ -241,7 +244,12 @@ $$-2 \mathbf{o}_1^\top W \mathbf{h}_1$$
 
 我们使用双线性形式导数恒等式：
 
-若 $a \in \mathbb{R}^m$，$b \in \mathbb{R}^r$，$W \in \mathbb{R}^{m \times r}$，则
+若
+$$
+a \in \mathbb{R}^m,\quad b \in \mathbb{R}^r,\quad W \in \mathbb{R}^{m \times r}
+$$
+
+，则
 
 $$
 \nabla_W (a^\top W b) = a b^\top
@@ -294,7 +302,7 @@ $$
 $H_{\text{source}} \in \mathbb{R}^{2 \times n}$：迭代优化后的源图像染料浓度矩阵（$n$ 为像素总数）；
 $W_{\text{ref}} \in \mathbb{R}^{3 \times 2}$：参考图像的颜色基矩阵，表示标准染色风格；
 $OD_{\text{new}} = W_{\text{ref}} \cdot H_{\text{source}} \in \mathbb{R}^{3 \times n}$：新的光密度矩阵；
-转换公式： 
+转换公式：
 
   $$
   RGB = 255 \cdot \exp(-OD)
@@ -375,20 +383,29 @@ $$
 $$
 
 $$
-\hat{\mathbf{o}}_1 = W \cdot \mathbf{h}_1=\begin{bmatrix}0.6 \cdot 0.4 + 0.2 \cdot 0.2 \\0.5 \cdot 0.4 + 0.3 \cdot 0.2 \\0.4 \cdot 0.4 + 0.1 \cdot 0.2\end{bmatrix}
-=\begin{bmatrix}0.28 \\0.26 \\0.18\end{bmatrix}
+\hat{\mathbf{o}}_1 = W \cdot \mathbf{h}_1
+= \begin{bmatrix}
+0.6 \cdot 0.4 + 0.2 \cdot 0.2 \\
+0.5 \cdot 0.4 + 0.3 \cdot 0.2 \\
+0.4 \cdot 0.4 + 0.1 \cdot 0.2
+\end{bmatrix}
+= \begin{bmatrix}
+0.28 \\
+0.26 \\
+0.18
+\end{bmatrix}
 $$
 
 残差：
 
 $$
-\mathbf{r} = \mathbf{o}_1 - \hat{\mathbf{o}}_1=\begin{bmatrix}
+\mathbf{r} = \mathbf{o}_1 - \hat{\mathbf{o}}_1
+= \begin{bmatrix}
 0.3 - 0.28 \\
 0.6 - 0.26 \\
 0.1 - 0.18
 \end{bmatrix}
-=
-\begin{bmatrix}
+= \begin{bmatrix}
 0.02 \\
 0.34 \\
 -0.08
@@ -399,8 +416,7 @@ $$
 
 $$
 \nabla_{\mathbf{h}_1} = -2 W^\top \mathbf{r}
-=
--2 \cdot
+= -2 \cdot
 \begin{bmatrix}
 0.6 & 0.5 & 0.4 \\
 0.2 & 0.3 & 0.1
@@ -411,14 +427,12 @@ $$
 0.34 \\
 -0.08
 \end{bmatrix}
-=
--2 \cdot
+= -2 \cdot
 \begin{bmatrix}
 0.3 \\
 0.196
 \end{bmatrix}
-=
-\begin{bmatrix}
+= \begin{bmatrix}
 -0.6 \\
 -0.392
 \end{bmatrix}
@@ -428,18 +442,15 @@ $$
 
 $$
 \mathbf{h}_1^{\text{new}} = \mathbf{h}_1 - \eta \nabla_{\mathbf{h}_1}
-=
-\begin{bmatrix}
+= \begin{bmatrix}
 0.4 \\
 0.2
 \end{bmatrix}
-+ 0.1 \cdot
-\begin{bmatrix}
++ 0.1 \cdot \begin{bmatrix}
 0.6 \\
 0.392
 \end{bmatrix}
-=
-\begin{bmatrix}
+= \begin{bmatrix}
 0.46 \\
 0.2392
 \end{bmatrix}
@@ -502,7 +513,7 @@ R =
 \end{bmatrix}
 $$
 
-计算梯度 \( \nabla_W = -2 R H^T \)
+计算梯度 \( \ nabla_W = -2 R H^T \)
 
 先写出 \( H^T \)：
 
@@ -531,7 +542,7 @@ $$
 \nabla W_{1,:} = -2 \cdot [0.0978, 0.0157] = [-0.1956, -0.0314]
 $$
 
-更新 W（学习率 \( \eta = 0.1 \)）
+更新 W（学习率 \( \ eta = 0.1 \)）
 
 $$
 W_{1,:}^{\text{new}} = W_{1,:} - \eta \cdot \nabla W_{1,:}
@@ -600,5 +611,5 @@ $$
 
 最终重建像素 RGB：
 $$
-RGB = [193, \ 197, \ 227]
+RGB = [193, 197, 227]
 $$
