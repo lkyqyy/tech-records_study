@@ -513,7 +513,15 @@ R =
 \end{bmatrix}
 $$
 
-计算梯度 \( \nabla_W = -2 R H^T \)
+---
+
+然后我们计算梯度：
+
+```latex
+$$
+\nabla_W = -2 R H^\top
+$$
+
 
 先写出 \( H^T \)：
 
@@ -610,6 +618,7 @@ $$
 ---
 
 最终重建像素 RGB：
+
 $$
 \mathbf{RGB} = \begin{bmatrix} 193 & 197 & 227 \end{bmatrix}
 $$
