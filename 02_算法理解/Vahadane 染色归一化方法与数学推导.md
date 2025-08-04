@@ -226,6 +226,7 @@ $$
 $$
 \mathbf{h}_1 = \mathbf{h}_1 - \eta \nabla_{h_1} L(\mathbf{h}_1)
 $$
+
 其中，$\eta$ 是学习率。这就是稀疏非负矩阵分解的全过程。，通过不断迭代优化，计算最佳H矩阵。
 
 > 注：虽然项 $\mathbf{o}_1^\top \mathbf{W} \mathbf{h}_1$ 是一个标量（即一个数），但它是一个关于 $\mathbf{h}_1$ 的表达式。因此，它不能被视为常数，它对 $\mathbf{h}_1$ 的导数 **不为 0**；
@@ -240,10 +241,11 @@ $$-2 \mathbf{o}_1^\top W \mathbf{h}_1$$
 
 我们使用双线性形式导数恒等式：
 
-> 若 $a \in \mathbb{R}^m$，$b \in \mathbb{R}^r$，$W \in \mathbb{R}^{m \times r}$，则  
-> $$
-> \nabla_W (a^\top W b) = a b^\top
-> $$
+若 $a \in \mathbb{R}^m$，$b \in \mathbb{R}^r$，$W \in \mathbb{R}^{m \times r}$，则
+
+$$
+\nabla_W (a^\top W b) = a b^\top
+$$
 
 因此：
 
@@ -252,14 +254,16 @@ $$
 $$
 
 而第三项：
+
 $$\mathbf{h}_1^\top W^\top W \mathbf{h}_1$$
 
 是一个关于 $W$ 的二次型项。我们利用如下恒等式：
 
-> 若 $x \in \mathbb{R}^r$, $W \in \mathbb{R}^{m \times r}$，则  
-> $$
-> \nabla_W \left( \|W x\|_2^2 \right) = 2 W x x^\top
-> $$
+若 $x \in \mathbb{R}^r$, $W \in \mathbb{R}^{m \times r}$，则  
+
+$$
+\nabla_W \left( \|W x\|_2^2 \right) = 2 W x x^\top
+$$
 
 于是有：
 
@@ -287,10 +291,11 @@ $$
 
 已知条件
 
-- $H_{\text{source}} \in \mathbb{R}^{2 \times n}$：迭代优化后的源图像染料浓度矩阵（$n$ 为像素总数）；
-- $W_{\text{ref}} \in \mathbb{R}^{3 \times 2}$：参考图像的颜色基矩阵，表示标准染色风格；
-- $OD_{\text{new}} = W_{\text{ref}} \cdot H_{\text{source}} \in \mathbb{R}^{3 \times n}$：新的光密度矩阵；
-- 转换公式：  
+$H_{\text{source}} \in \mathbb{R}^{2 \times n}$：迭代优化后的源图像染料浓度矩阵（$n$ 为像素总数）；
+$W_{\text{ref}} \in \mathbb{R}^{3 \times 2}$：参考图像的颜色基矩阵，表示标准染色风格；
+$OD_{\text{new}} = W_{\text{ref}} \cdot H_{\text{source}} \in \mathbb{R}^{3 \times n}$：新的光密度矩阵；
+转换公式： 
+
   $$
   RGB = 255 \cdot \exp(-OD)
   $$
@@ -303,8 +308,8 @@ $$
 
 其中：
 
-- $W_{\text{ref}}$：每列表示参考图像中染料的吸光方向（即颜色基）；
-- $H_{\text{source}}$：表示每个像素在两种染料下的浓度；
+$W_{\text{ref}}$：每列表示参考图像中染料的吸光方向（即颜色基）；
+$H_{\text{source}}$：表示每个像素在两种染料下的浓度；
 
 从 OD 空间还原 RGB 图像,根据光密度定义公式：
 
@@ -320,7 +325,6 @@ $$
 
 ---
 
-
 ## 5.手工模拟计算示例
 
 输入光密度矩阵 OD ∈ ℝ<sup>3×4</sup>：
@@ -335,6 +339,7 @@ OD =
 0.1 & 0.3 & 0.1 & 0.2
 \end{bmatrix}
 $$
+
 初始值设定：
 染料颜色基矩阵 $W \in \mathbb{R}^{3 \times 2}$：
 
@@ -452,6 +457,7 @@ $$
 0.2392
 \end{bmatrix}
 $$
+
 类似步骤可批量处理所有列（像素），完成整个 $H$ 的更新。
 
 > 不需要非负约束修正，直接进入下一轮迭代。如果出现负数，可以在更新后检查是否全为0，如果是，则将所有元素设置为一个很小的正数，例如 1e-8。
@@ -484,7 +490,7 @@ $$
 矩阵乘法：
 
 $$
-WH = W \cdot H = 
+WH = W \cdot H =
 \begin{bmatrix}
 0.34192 & 0.38 & 0.22 & 0.34 \\
 0.35876 & 0.33 & 0.21 & 0.28 \\
@@ -514,7 +520,7 @@ $$
 先写出 \( H^T \)：
 
 $$
-H^T = 
+H^T =
 \begin{bmatrix}
 0.46 & 0.2392 \\
 0.6 & 0.1 \\
